@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Road Safety Awareness</title>
+   
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>🚦 Road Safety Awareness</h1>
+        <p>Be Safe, Stay Alive</p>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <button class="tab-link active" onclick="openTab(event, 'Home')">Home</button>
+        <button class="tab-link" onclick="openTab(event, 'Rules')">Road Safety Rules</button>
+        <button class="tab-link" onclick="openTab(event, 'Contact')">Contact & Tips</button>
+    </nav>
+
+    <!-- Main Content Area -->
+    <div class="container">
+        
+        <!-- Tab 1: Home -->
+        <div id="Home" class="tab-content active">
+            <div class="banner">
+                Drive Safe, Arrive Safe
+            </div>
+            <div class="intro-text">
+                <h2>Why is Road Safety Important?</h2>
+                <p>
+                    Road safety is a critical issue that affects everyone. Every year, thousands of lives are lost due to traffic accidents. 
+                    These accidents not only cause loss of life but also lead to severe injuries and financial burdens on families.
+                </p>
+                <br>
+                <p>
+                    By following simple rules and being aware of our surroundings, we can significantly reduce the number of accidents. 
+                    Whether you are a driver, a passenger, a cyclist, or a pedestrian, your actions on the road matter. 
+                    Let's work together to create a safer environment for everyone.
+                </p>
+            </div>
+        </div>
+
+        <!-- Tab 2: Road Safety Rules -->
+        <div id="Rules" class="tab-content">
+            <h2>Essential Road Safety Rules</h2>
+            <p>Follow these rules to ensure your safety and the safety of others.</p>
+            
+            <div class="rules-grid">
+                <div class="rule-card">
+                    <span class="icon">🪖</span>
+                    <h3>Wear Helmets</h3>
+                    <p>Always wear a helmet while riding a two-wheeler. It protects your head in case of a fall.</p>
+                </div>
+                <div class="rule-card">
+                    <span class="icon">🪢</span>
+                    <h3>Use Seat Belts</h3>
+                    <p>Fasten your seat belt before starting the car. It is the most effective way to prevent injury.</p>
+                </div>
+                <div class="rule-card">
+                    <span class="icon">🚦</span>
+                    <h3>Follow Signals</h3>
+                    <p>Never run a red light. Obey traffic signals and signs to maintain order on the road.</p>
+                </div>
+                <div class="rule-card">
+                    <span class="icon">📵</span>
+                    <h3>No Mobile Phones</h3>
+                    <p>Avoid using your phone while driving. It distracts you and increases the risk of accidents.</p>
+                </div>
+                <div class="rule-card">
+                    <span class="icon">🚗</span>
+                    <h3>Obey Speed Limits</h3>
+                    <p>Drive within the prescribed speed limits. Speeding reduces reaction time.</p>
+                </div>
+                <div class="rule-card">
+                    <span class="icon">👀</span>
+                    <h3>Look Both Ways</h3>
+                    <p>Before crossing the road, look left, right, and left again to ensure no vehicles are coming.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 3: Contact / Awareness Tips -->
+        <div id="Contact" class="tab-content">
+            <h2>Awareness Tips</h2>
+            
+            <div class="tips-container">
+                <div class="tips-box">
+                    <h3>For Pedestrians</h3>
+                    <ul>
+                        <li>Use footbridges or zebra crossings whenever available.</li>
+                        <li>Do not wear headphones while walking near traffic.</li>
+                        <li>Wear bright or reflective clothing at night so drivers can see you.</li>
+                    </ul>
+                </div>
+
+                <div class="tips-box">
+                    <h3>For Cyclists</h3>
+                    <ul>
+                        <li>Ride on the right side of the road in the same direction as traffic.</li>
+                        <li>Use hand signals to indicate turns.</li>
+                        <li>Keep a safe distance from large vehicles like trucks and buses.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr style="margin: 30px 0; border: 0; border-top: 1px solid #ddd;">
+
+            <h2>Contact Us / Feedback</h2>
+            <p style="text-align: center; margin-bottom: 20px;">Have a suggestion or want to report a hazard? Send us a message.</p>
+            
+            <form class="contact-form" onsubmit="event.preventDefault(); alert('Thank you for your feedback!');">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Your message here..." required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+
+    </div>
+
+    <!-- JavaScript for Tab Switching -->
+    <script>
+        function openTab(evt, tabName) {
+            // 1. Hide all tab content
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+                tabcontent[i].classList.remove("active");
+            }
+
+            // 2. Remove "active" class from all buttons
+            tablinks = document.getElementsByClassName("tab-link");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
+            // 3. Show the current tab, and add an "active" class to the button that opened the tab
+            document.getElementById(tabName).style.display = "block";
+            // Small timeout to allow display:block to apply before adding opacity class for animation
+            setTimeout(() => {
+                document.getElementById(tabName).classList.add("active");
+            }, 10);
+            
+            evt.currentTarget.className += " active";
+        }
+    </script>
+
+</body>
+</html>
